@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.githubtest.R;
 import com.githubtest.interfaces.RecyclersOnItemClickListener;
+import com.githubtest.models.Commit;
 import com.githubtest.models.CommitModel;
 import com.squareup.picasso.Picasso;
 
@@ -29,6 +31,8 @@ public class ListAdapterHolder extends RecyclerView.Adapter<ListAdapterHolder.Cu
 
     private final Activity mActivity;
     RecyclersOnItemClickListener mRecyclersOnItemClickListener;
+
+
 
     public ListAdapterHolder(Activity mActivity, RecyclersOnItemClickListener listener, List<CommitModel> mCommitList) {
         this.mActivity = mActivity;
@@ -86,4 +90,14 @@ public class ListAdapterHolder extends RecyclerView.Adapter<ListAdapterHolder.Cu
         }
 
     }
+
+    // for searching not completed
+    public void setFilter(List<CommitModel> countryModels) {
+        mCommitList = new ArrayList<>();
+        mCommitList.addAll(countryModels);
+        notifyDataSetChanged();
+    }
+
+
+
 }

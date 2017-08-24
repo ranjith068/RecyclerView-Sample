@@ -1,6 +1,9 @@
 package com.githubtest.models;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -24,4 +27,10 @@ public class CommitModel {
     public Committer committer;
 
     public String url;
+
+
+//    @Override
+//    public int compareTo(@NonNull CommitModel o) {
+//        return author.compareTo(o.author);
+//    }
 }
